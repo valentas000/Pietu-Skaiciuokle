@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pietų Skaiciuoklė</title>
+
+<style>
+  .container{overflow: hidden;}
+  .tab{float: left;}
+  .tab-2{margin-left: 50px}
+  .tab-2 input{display: block; margin-bottom: 10px}
+
+</style>
+
+  </head>
+  <body>
+<h1>Pietų Skaičiuoklė</h1>
+
+<p>Įveskite vienos porcijos sumą</p>
+<ul>
+  <li>Pusryčiai : <input type="number" id="pusryciai"> € </li><br>
+  <li>Pietūs :    <input type="number" id="pietus">    € </li><br>
+  <li>Vakarienė : <input type="number" id="vakariene"> € </li><br>
+</ul>
+
+<table>
+  <tr>
+    <th>Pusryčiai -</th>
+    <th>Pietūs  -  </th>
+    <th>Vakarienė  </th>
+  </tr>
+  <tr>
+    <td id="pusryciaiSUM"></td>
+    <td id="pietusSUM">   </td>
+    <td id="vakarieneSUM"></td>
+  </tr>
+</table>
+<br>
+<button id="foodPrice">ĮVESTI SUMAS</button>
+
+<br>
+
+<! -- vaikų / mokinių lentelės prasideda nuo čia -- >
+
+<br>
+
+<div class="container">
+  <div class="tab tab-1">
+    <table id="table" border="1">
+        <tr>
+            <th>Vardas</th>
+            <th>Pusryčiai</th>
+            <th>Pietūs</th>
+            <th>vakarienė</th>
+            <th>bendra suma</th>
+            <th>IŠTRINTI</th>
+        </tr>
+    </table>
+  </div>
+  <div class="tab tab-2">
+
+    Vardas : <input type="text" name="vardas" id="vardas">
+    Pusryčių d. : <input type="number" name="pusryciaiDays" id="pusryciaiDays">
+    Pietų d. : <input type="number" name="pietusDays" id="pietusDays">
+    Vakarienių d. : <input type="number" name="vakarieneDays" id="vakarieneDays">
+
+    <button onclick="addHtmlTableRow();">Įvesti</button>
+
+  </div>
+</div>
+
+
+  <script src="index.js"></script>
+
+  </body>
+</html>
