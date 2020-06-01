@@ -40,13 +40,17 @@ var foodPrice = document.getElementById('foodPrice');
               pusryciaiDays = document.getElementById("pusryciaiDays").value,
               pietusDays = document.getElementById("pietusDays").value,
               vakarieneDays = document.getElementById("vakarieneDays").value,
-              suma = pusryciaiDays * pusryciai + pietusDays * pietus + vakarieneDays * vakariene + " € ";
+              suma = pusryciaiDays * pusryciai + pietusDays * pietus + vakarieneDays * vakariene;
+
+              var pusryciuSuma = pusryciaiDays * pusryciai;
+              var pietusSuma = pietusDays * pietus;
+              var vakarienesSuma = vakarieneDays * vakariene;
 
               cell1.innerHTML = vardas;
-              cell2.innerHTML = pusryciaiDays * pusryciai + " € ";
-              cell3.innerHTML = pietusDays * pietus + " € ";
-              cell4.innerHTML = vakarieneDays * vakariene + " € ";
-              cell5.innerHTML = suma;
+              cell2.innerHTML = pusryciuSuma.toFixed(2) + " € ";
+              cell3.innerHTML = pietusSuma.toFixed(2) + " € ";
+              cell4.innerHTML = vakarienesSuma.toFixed(2) + " € ";
+              cell5.innerHTML = suma.toFixed(2) + " € ";
               cell6.innerHTML = "ištirinti";
 
               // ištrinimo funkcija
