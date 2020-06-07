@@ -1,76 +1,92 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Pietų Skaiciuoklė</title>
+<head>
+  <meta charset="utf-8">
+  <title>Pietų Skaiciuoklė</title>
 
-<style>
-  .container{overflow: hidden;}
-  .tab{float: left;}
-  .tab-2{margin-left: 50px}
-  .tab-2 input{display: block; margin-bottom: 10px}
+  <style>
+    .container{overflow: hidden;}
+    .tab{float: left;}
+    .tab-2{margin-left: 50px}
+    .tab-2 input{display: block; margin-bottom: 10px}
 
-</style>
+  </style>
 
-  </head>
-  <body>
-<h1>Pietų Skaičiuoklė</h1>
+</head>
+<body>
+  <h1>Pietų Skaičiuoklė</h1>
 
-<p>Įveskite vienos porcijos sumą</p>
-<ul>
-  <li>Pusryčiai : <input type="number" id="pusryciai"> € </li><br>
-  <li>Pietūs :    <input type="number" id="pietus">    € </li><br>
-  <li>Vakarienė : <input type="number" id="vakariene"> € </li><br>
-</ul>
+  <p>Įveskite vienos porcijos sumą</p>
+  <ul>
+    <li>Pusryčiai : <input type="number" id="pusryciai"> € </li><br>
+    <li>Pietūs :    <input type="number" id="pietus">    € </li><br>
+    <li>Vakarienė : <input type="number" id="vakariene"> € </li><br>
+  </ul>
 
-<table>
-  <tr>
-    <th>Pusryčiai -</th>
-    <th>Pietūs  -  </th>
-    <th>Vakarienė  </th>
-  </tr>
-  <tr>
-    <td id="pusryciaiSUM"></td>
-    <td id="pietusSUM">   </td>
-    <td id="vakarieneSUM"></td>
-  </tr>
-</table>
-<br>
-<button id="foodPrice">ĮVESTI SUMAS</button>
+  <table>
+    <tr>
+      <th>Pusryčiai -</th>
+      <th>Pietūs  -  </th>
+      <th>Vakarienė  </th>
+    </tr>
+    <tr>
+      <td id="pusryciaiSUM"></td>
+      <td id="pietusSUM">   </td>
+      <td id="vakarieneSUM"></td>
+    </tr>
+  </table>
+  <br>
+  <button id="foodPrice">ĮVESTI SUMAS</button>
 
-<br>
+  <br>
 
-<! -- vaikų / mokinių lentelės prasideda nuo čia -- >
+  <! -- vaikų / mokinių lentelės prasideda nuo čia -- >
 
-<br>
+  <br>
 
-<div class="container">
-  <div class="tab tab-1">
-    <table id="table" border="1">
+  <div class="container">
+    <div class="tab tab-1">
+      <table id="table" border="1">
         <tr>
-            <th>Vardas</th>
-            <th>Pusryčiai</th>
-            <th>Pietūs</th>
-            <th>vakarienė</th>
-            <th>bendra suma</th>
-            <th>IŠTRINTI</th>
+          <th>Vardas</th>
+          <th>Pusryčiai</th>
+          <th>Pietūs</th>
+          <th>vakarienė</th>
+          <th>bendra suma</th>
+          <th>IŠTRINTI</th>
         </tr>
-    </table>
-  </div>
-  <div class="tab tab-2">
+      </table>
+      <span id="val"></span>
+    </div>
+    <div class="tab tab-2">
 
-    Vardas : <input type="text" name="vardas" id="vardas">
-    Pusryčių d. : <input type="number" name="pusryciaiDays" id="pusryciaiDays">
-    Pietų d. : <input type="number" name="pietusDays" id="pietusDays">
-    Vakarienių d. : <input type="number" name="vakarieneDays" id="vakarieneDays">
 
-    <button onclick="addHtmlTableRow();">Įvesti</button>
+      Vardas : <input type="text" name="vardas" id="vardas">
+      Pusryčių d. : <input type="number" name="pusryciaiDays" id="pusryciaiDays">
+      Pietų d. : <input type="number" name="pietusDays" id="pietusDays">
+      Vakarienių d. : <input type="number" name="vakarieneDays" id="vakarieneDays">
 
-  </div>
+      <button onclick="addHtmlTableRow(); sumValF();">Įvesti</button>
+
+    </div>
+
+
+    <script>
+      function sumValF()
+      {
+        var table =  document.getElementById("table"), sumVal = 0;
+
+        for(var i = 1; i < table.rows.length; i++)
+          sumVal += parseFloat(table.rows[i].cells[4].innerHTML);
+
+      document.getElementById("val").innerHTML = "Bendra grupės suma = " + sumVal.toFixed(2) + " € ";
+    }
+  </script>
+
 </div>
 
 
-  <script src="index.js"></script>
+<script src="index.js"></script>
 
-  </body>
+</body>
 </html>
