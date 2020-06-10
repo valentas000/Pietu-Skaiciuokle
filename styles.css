@@ -1,0 +1,61 @@
+
+.container{overflow: hidden;}
+.tab{float: left;}
+.tab-2{margin-left: 50px}
+.tab-2 input{display: block; margin-bottom: 10px}
+
+input {
+  display: block;
+  margin-bottom: auto;
+  background-color: lightblue;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: green;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: 100;
+  background-size: 100% 100%;
+  margin-bottom: 15px;
+}
+
+.header {
+  padding: 5px;
+  background: #289467;
+  color: white;
+  font-size: 15px;
+  margin-right: left;
+}
+
+.pietskaina {
+  padding: 5px;
+  background: #289467;
+  color: white;
+  font-size: 15px;
+  margin-right: left;
+}
+
+.pietskaina2 {
+  padding: 5px;
+  background: #289467;
+  color: white;
+  font-size: 20px;
+  margin-right: left;
+}
+
+#table {
+  background-color: white;
+}
+
+#val {
+  font-size: 20px;
+}
+
+
+body {
+  background-color: #4896b0;
+}
