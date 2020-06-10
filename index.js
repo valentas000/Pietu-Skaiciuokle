@@ -1,29 +1,28 @@
+  var foodPrice = document.getElementById('foodPrice');
+
+  var kainos = function()
+  {
+     // Ivestos reikšmės į laukelius
+     var pusryciai = document.getElementById("pusryciai");
+     var pietus = document.getElementById("pietus");
+     var vakariene = document.getElementById("vakariene");
+     // reikšmės kurios pasikeis įvedus duomenys
+     var pusryciaiSUM = document.getElementById("pusryciaiSUM");
+     var pietusSUM = document.getElementById("pietusSUM");
+     var vakarieneSUM = document.getElementById("vakarieneSUM");
+     // pakeičia html ką įvedėm į langelius
+     pusryciaiSUM.innerHTML = pusryciai.value + " €";
+     pietusSUM.innerHTML    = pietus.value + " €";
+     vakarieneSUM.innerHTML = vakariene.value + " €";
+   };
+   foodPrice.addEventListener('click', kainos);
 
 
+            // nuo cia prasideda kodas su maisto skaiciuokle
 
-var foodPrice = document.getElementById('foodPrice');
- var kainos = function(){
-   // Ivestos reikšmės į laukelius
-            var pusryciai = document.getElementById("pusryciai");
-            var pietus = document.getElementById("pietus");
-            var vakariene = document.getElementById("vakariene");
-  // reikšmės kurios pasikeis įvedus duomenys
-            var pusryciaiSUM = document.getElementById("pusryciaiSUM");
-            var pietusSUM = document.getElementById("pietusSUM");
-            var vakarieneSUM = document.getElementById("vakarieneSUM");
-// pakeičia html ką įvedėm į langelius
-            pusryciaiSUM.innerHTML = pusryciai.value;
-            pietusSUM.innerHTML    = pietus.value;
-            vakarieneSUM.innerHTML = vakariene.value;
- };
-      foodPrice.addEventListener('click', kainos);
-
-
-          // nuo cia prasideda kodas su maisto skaiciuokle
-
-      function addHtmlTableRow()
-      {
-          var table = document.getElementById("table"),
+            function addHtmlTableRow()
+            {
+              var table = document.getElementById("table"),
               newRow = table.insertRow(table.length),
               cell1 = newRow.insertCell(0),
               cell2 = newRow.insertCell(1),
@@ -53,15 +52,15 @@ var foodPrice = document.getElementById('foodPrice');
               cell5.innerHTML = suma.toFixed(2) + " € ";
               cell6.innerHTML = "ištirinti";
 
-              // ištrinimo funkcija
+                // ištrinimo funkcija
 
-              var index, table = document.getElementById("table");
-              for (var i = 1; i < table.rows.length; i++)
-              {
-                table.rows[i].cells[5].onclick = function()
+                var index, table = document.getElementById("table");
+                for (var i = 1; i < table.rows.length; i++)
+                {
+                  table.rows[i].cells[5].onclick = function()
                   {
                     index = this.parentElement.rowIndex;
                     table.deleteRow(index);
                   };
+                }
               }
-      }
